@@ -38,7 +38,7 @@ public class SimpleController {
 			return "login-result";
 		} else {
 			model.addAttribute("error", "incorrect username or password");
-			return "index";
+			return "error";
 		}
 	}
 
