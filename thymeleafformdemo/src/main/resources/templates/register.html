@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Create New Account</h2>
+            <form th:action="@{/save-register}" th:object="${mylogin}" method="post">
+                <div class="form-group">
+                	<div class="row">
+                	<div class="col-md-6 form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-6 form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" th:field="*{uname}">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" th:field="*{password}">
+                    </div>
+                    <div class="col-md-6 form-group">
+                    	<label>First Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 form-group">
+                    <label>Last Name</label>
+                        	<input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
