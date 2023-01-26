@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/register")
+@RequestMapping()
 public class RegistrationController {
 
     @Autowired
     EphemeralPeristanceStore peristanceStore;
 
-    @GetMapping()
+    @GetMapping("/register")
     public String registrationForm(Model model) {
         model.addAttribute("mylogin", new LoginPOJO());
         return "register";
     }
 
-    @PostMapping()
+    @PostMapping("/save-register")
     public String saveRegistrationSubmission(Model model, LoginPOJO mylogin) {
         System.out.println(">>>>>> saveRegistrationSubmission");
         System.out.println(">>>>>> uname="+mylogin.getUname());
