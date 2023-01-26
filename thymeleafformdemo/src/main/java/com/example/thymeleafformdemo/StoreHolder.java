@@ -10,7 +10,7 @@ public class StoreHolder {
     private static EphemeralPeristanceStore peristenceStore;
 
     @Bean
-    public EphemeralPeristanceStore getPersistenceStore() {
+    protected EphemeralPeristanceStore getPersistenceStore() {
         return Objects.requireNonNullElseGet(peristenceStore, EphemeralPeristanceStore::new);
     }
 }
