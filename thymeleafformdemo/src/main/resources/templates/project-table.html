@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>project-table</title>
+</head>
+    <body>
+        <h3>All Projects</h3>
+        <hr>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Color</th>
+                    <th>Description</th>
+                    <th>Days</th>
+                    <th>Price</th>
+                    <th>Featured</th>
+                    <th>Launch Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tempProjects:${projects}">
+                    <td th:text="${tempProjects.id}"/>
+                    <td th:text="${tempProjects.title}"/>
+                    <td th:text="${tempProjects.type}"/>
+                    <td th:text="${tempProjects.color}"/>
+                    <td th:text="${tempProjects.description}"/>
+                    <td th:text="${tempProjects.days}"/>
+                    <td th:text="${tempProjects.price}"/>
+                    <td th:text="${tempProjects.featured}"/>
+                    <td th:text="${tempProjects.launchDate}"/>
+                </tr>
+            </tbody>
+        </table>
+
+</body>
+</html>
