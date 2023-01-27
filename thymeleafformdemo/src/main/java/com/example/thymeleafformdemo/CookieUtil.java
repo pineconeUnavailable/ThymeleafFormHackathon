@@ -21,6 +21,7 @@ public class CookieUtil {
     }
 
     public static boolean validateSession(EphemeralPeristanceStore peristanceStore, String username, String session) {
-        return peristanceStore.getSession(username).equals(session);
+        String existing = peristanceStore.getSession(username);
+        return existing != null && existing.equals(session);
     }
 }
