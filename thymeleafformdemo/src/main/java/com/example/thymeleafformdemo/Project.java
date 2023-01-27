@@ -107,7 +107,7 @@ public class Project implements Serializable, Comparable<Project>{
 
     @Override
     public int compareTo(Project o) {
-        if (this.featured == o.featured) {
+        if (this.featured != o.featured) {
             return o.featured ? -1 : 1;
         }
 
