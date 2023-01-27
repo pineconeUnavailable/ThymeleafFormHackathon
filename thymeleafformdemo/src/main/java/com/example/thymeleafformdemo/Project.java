@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class Project implements Serializable {
+public class Project implements Serializable, Comparable<Project>{
 
     private Long id;
     private String title;
@@ -103,6 +103,15 @@ public class Project implements Serializable {
 
     public void setLaunchDate(LocalDateTime launchDate) {
         this.launchDate = launchDate;
+    }
+
+    @Override
+    public int compareTo(Project o) {
+        if ((this.featured ? 1 : (o.featured ? 1 : 0)) == 1) {
+            return o.featured ? 0 : 1;
+        }
+
+        return this.launchDate.equals(o.launchDate) ? 0 : this.launchDate.isBefore(o.launchDate) ? -1 : 1;
     }
 /*
     @Override
