@@ -107,8 +107,8 @@ public class Project implements Serializable, Comparable<Project>{
 
     @Override
     public int compareTo(Project o) {
-        if ((this.featured ? 1 : (o.featured ? 1 : 0)) == 1) {
-            return o.featured ? 0 : 1;
+        if (this.featured == o.featured) {
+            return o.featured ? -1 : 1;
         }
 
         return this.launchDate.equals(o.launchDate) ? 0 : this.launchDate.isBefore(o.launchDate) ? -1 : 1;
