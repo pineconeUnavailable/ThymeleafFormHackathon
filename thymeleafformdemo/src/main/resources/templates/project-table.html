@@ -22,16 +22,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="tempProjects:${projects}">
-                    <td th:text="${tempProjects.id}"/>
-                    <td th:text="${tempProjects.title}"/>
-                    <td th:text="${tempProjects.type}"/>
-                    <td th:text="${tempProjects.color}"/>
-                    <td th:text="${tempProjects.description}"/>
-                    <td th:text="${tempProjects.days}"/>
-                    <td th:text="${tempProjects.price}"/>
-                    <td th:text="${tempProjects.featured}"/>
-                    <td th:text="${tempProjects.launchDate}"/>
+                <tr th:each="tempProjects : ${projects}">
+                    <td th:text="${tempProjects.id}"></td>
+                    <td th:text="${tempProjects.title}"></td>
+                    <td th:text="${tempProjects.type}"></td>
+                    <td th:text="${tempProjects.color}"></td>
+                    <td th:text="${tempProjects.description}"></td>
+                    <td th:text="${tempProjects.days}"></td>
+                    <td th:text="${tempProjects.price}"></td>
+                    <td th:text="${tempProjects.featured}"></td>
+                    <td th:text="${tempProjects.launchDate}"></td>
                 </tr>
             </tbody>
         </table>
