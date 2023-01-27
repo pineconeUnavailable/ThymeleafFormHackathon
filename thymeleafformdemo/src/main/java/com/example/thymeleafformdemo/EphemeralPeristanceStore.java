@@ -9,11 +9,7 @@ public class EphemeralPeristanceStore {
     private final HashMap<String, LoginPOJO> users;
     private final HashMap<String, String> sessionId;
     private final TreeSet<Project> projectTree;
-    
-    //LocalDateTime launchDate = 2007-12-03T10:15:30;
-    
-    public TreeSet<Project> testTreeSet = new TreeSet<Project>();
-    
+        
     public boolean store(LoginPOJO obj){
         if(users.containsKey(obj.getUname())) {
             return false;
@@ -57,5 +53,8 @@ public class EphemeralPeristanceStore {
     	Project testProj1 = new Project(1l,"Blah Test","Blah Type","#FF0000","Blah Description",1,1.00,true,LocalDateTime.now());
     	Project testProj2 = new Project(1l,"Blah Test2","Blah Type2","#FFFF00","Blah Description2",1,1.00,true,LocalDateTime.now());
     	Project testProj3 = new Project(1l,"Blah Test3","Blah Type3","#FFFFF0","Blah Description3",1,1.00,true,LocalDateTime.now());
+    	storeProject(testProj1);
+    	storeProject(testProj2);
+    	storeProject(testProj3);
     }
 }
