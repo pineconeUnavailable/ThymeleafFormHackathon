@@ -32,9 +32,8 @@ public class ProjectController {
 
     @PostMapping("/save-project")
     public String saveProjectSubmission(@ModelAttribute Project project) {
-
-        // TODO: save project in DB here
-
+        project.setNullsAsDefault();
+        peristanceStore.storeProject(project);
         return "result";
     }
 }
