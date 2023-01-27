@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Project implements Serializable, Comparable<Project>{
+    private static final Long ID_OFFSET = 34500000L;
+    private static Long idCounter = 0L;
 
     private Long id;
     private String title;
@@ -19,6 +21,8 @@ public class Project implements Serializable, Comparable<Project>{
     private LocalDateTime launchDate;
 
     public Project() {
+        this.id = idCounter++;
+        this.launchDate = LocalDateTime.now();
     }
 
     public Project(Long id, String title, String type, String color, String description, Integer days, Double price, Boolean featured, LocalDateTime launchDate) {
@@ -129,4 +133,11 @@ public class Project implements Serializable, Comparable<Project>{
                 '}';
     }
     */
+
+    public void setNullsAsDefault() {
+        id = id == null ? ID_OFFSET + idCounter++ : id;
+        price = price == null ? 0.0 : price;
+        days = days == null ? 0 : days;
+        launchDate = launchDate == null ? LocalDateTime.now() : launchDate;
+    }
 }
